@@ -1,156 +1,727 @@
+/* ==========================================
+   NOVIN PISHRO
+   Premium Landing Page
+========================================== */
+
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
 }
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
 
 body{
 
-    background:#0d0d0d;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
 
-    color:white;
+    color:#ffffff;
 
-    text-align:center;
+    min-height:100vh;
 
     overflow-x:hidden;
 
+    position:relative;
+
+
+    background:
+
+    radial-gradient(
+    circle at top,
+    #65111d 0%,
+    #2b060d 45%,
+    #120104 100%
+    );
+
 }
+
+
+
+/* ===========================
+      Background Glow
+=========================== */
+
 
 .background-glow{
 
+
     position:fixed;
 
-    width:600px;
+    inset:0;
 
-    height:600px;
+    pointer-events:none;
 
-    background:#ff1b1b;
 
-    filter:blur(180px);
+    background:
 
-    top:-250px;
 
-    left:50%;
+    radial-gradient(
+    circle at 50% 5%,
+    rgba(255,40,60,.25),
+    transparent 40%
+    ),
 
-    transform:translateX(-50%);
 
-    opacity:.25;
+    radial-gradient(
+    circle at 10% 90%,
+    rgba(255,30,30,.10),
+    transparent 45%
+    ),
+
+
+    radial-gradient(
+    circle at 90% 70%,
+    rgba(255,0,60,.12),
+    transparent 45%
+    );
+
+
+    filter:blur(30px);
+
 
     z-index:-1;
 
 }
 
-header{
 
-    padding:60px 25px;
 
-}
+/* ===========================
+        Container
+=========================== */
 
-.logo img{
 
-    width:150px;
+.container{
 
-    margin-bottom:20px;
 
-}
+    width:min(92%,470px);
 
-h1{
-
-    font-size:42px;
-
-    letter-spacing:4px;
-
-    font-weight:800;
-
-}
-
-.subtitle{
-
-    margin-top:12px;
-
-    color:#d9d9d9;
-
-    font-size:18px;
-
-}
-
-.buttons{
-
-    width:90%;
-
-    max-width:450px;
 
     margin:auto;
 
+
+    padding:35px 0 45px;
+
+
 }
 
-.btn{
 
-    display:block;
+
+/* ===========================
+          Hero
+=========================== */
+
+
+.hero{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    text-align:center;
+
+
+    margin-bottom:35px;
+
+
+    animation:heroShow .8s ease both;
+
+
+}
+
+
+
+
+/* ===========================
+          Logo
+=========================== */
+
+
+.logo-wrapper{
+
+
+    width:185px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    margin-bottom:22px;
+
+
+}
+
+
+
+.logo-wrapper img{
+
+
+    width:100%;
+
+
+    height:auto;
+
+
+    user-select:none;
+
+
+    transition:.45s ease;
+
+
+
+    filter:
+
+    drop-shadow(
+    0 0 12px rgba(255,30,30,.30)
+    )
+
+    drop-shadow(
+    0 0 35px rgba(255,0,60,.18)
+    );
+
+
+}
+
+
+
+.logo-wrapper img:hover{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+
+/* ===========================
+       Company Name
+=========================== */
+
+
+.hero h1{
+
+
+    font-size:40px;
+
+
+    font-weight:300;
+
+
+    letter-spacing:6px;
+
+
+    color:#f5f5f5;
+
+
+    margin-bottom:12px;
+
+
+
+    text-shadow:
+
+
+    0 0 15px rgba(255,20,20,.25);
+
+
+
+}
+
+
+
+/* ===========================
+          Subtitle
+=========================== */
+
+
+.hero p{
+
+
+    color:#ff8a8a;
+
+
+    font-size:12px;
+
+
+    letter-spacing:4px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+/* ===========================
+         Cards Grid
+=========================== */
+
+
+.cards{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+    gap:18px;
+
+
+}
+
+
+
+/* ===========================
+        Glass Cards
+=========================== */
+
+
+.card{
+
+
+    position:relative;
+
+
+    min-height:125px;
+
+
+    padding:22px 15px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
 
     text-decoration:none;
 
+
     color:white;
 
-    margin:18px 0;
 
-    padding:18px;
 
-    border-radius:18px;
+    background:
 
-    background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.12);
+    linear-gradient(
 
-    backdrop-filter:blur(18px);
+    145deg,
 
-    transition:.3s;
+    rgba(255,255,255,.12),
 
-    font-size:18px;
+    rgba(255,255,255,.03)
 
-    font-weight:600;
+    );
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+
+    border-radius:22px;
+
+
+
+    backdrop-filter:blur(15px);
+
+
+    -webkit-backdrop-filter:blur(15px);
+
+
+
+    box-shadow:
+
+
+    inset 0 0 25px rgba(255,255,255,.04),
+
+
+    0 15px 35px rgba(0,0,0,.35);
+
+
+
+    overflow:hidden;
+
+
+
+    transition:.45s ease;
+
+
+
+    animation:
+
+    cardShow .7s ease both;
+
 
 }
 
-.btn:hover{
 
-    background:#ff2020;
 
-    transform:scale(1.03);
+
+
+.card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+
+    background:
+
+
+    radial-gradient(
+
+    circle at top,
+
+    rgba(255,40,40,.35),
+
+    transparent 60%
+
+    );
+
+
+
+    opacity:0;
+
+
+    transition:.45s ease;
+
+
 
 }
 
-.about{
 
-    width:90%;
 
-    max-width:700px;
 
-    margin:70px auto;
+
+.card:hover{
+
+
+    transform:
+
+
+    translateY(-8px)
+
+    scale(1.03);
+
+
+
+    border-color:
+
+    rgba(255,80,80,.5);
+
+
+
+    box-shadow:
+
+
+    0 20px 45px rgba(255,0,0,.25);
+
+
 
 }
 
-.about h2{
 
-    font-size:34px;
 
-    margin-bottom:25px;
+.card:hover::before{
 
-}
 
-.about p{
+    opacity:1;
 
-    color:#d0d0d0;
-
-    line-height:2;
 
 }
 
-footer{
 
-    padding:40px;
 
-    color:#888;
+
+
+.card img{
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+    object-fit:contain;
+
+
+
+    z-index:1;
+
+
+
+    filter:
+
+
+    drop-shadow(
+
+    0 0 10px rgba(255,50,50,.45)
+
+    );
+
+
+}
+
+
+
+
+
+.card span{
+
+
+    font-size:13px;
+
+
+    color:#ffb0b0;
+
+
+    letter-spacing:1px;
+
+
+    z-index:1;
+
+
+
+}
+
+
+
+
+
+.card strong{
+
+
+    font-size:15px;
+
+
+    font-weight:500;
+
+
+    letter-spacing:1px;
+
+
+    z-index:1;
+
+
+
+}
+
+
+
+
+
+/* ===========================
+        Animations
+=========================== */
+
+
+@keyframes heroShow{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateY(-25px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+@keyframes cardShow{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateY(25px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+/* ===========================
+       Responsive
+=========================== */
+
+
+@media(max-width:420px){
+
+
+
+.container{
+
+
+    width:92%;
+
+
+    padding-top:25px;
+
+
+}
+
+
+
+.logo-wrapper{
+
+
+    width:150px;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:30px;
+
+
+    letter-spacing:4px;
+
+
+}
+
+
+
+.cards{
+
+
+    gap:14px;
+
+
+}
+
+
+
+.card{
+
+
+    min-height:115px;
+
+
+}
+
+
+
+.card strong{
+
+
+    font-size:13px;
+
+
+}
+
+
+
+}
+
+
+
+
+@media(min-width:700px){
+
+
+
+.container{
+
+
+    width:470px;
+
+
+}
+
+
 
 }
