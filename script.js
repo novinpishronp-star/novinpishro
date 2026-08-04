@@ -1,14 +1,18 @@
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    const buttons=document.querySelectorAll(".glass-btn");
+    const buttons = document.querySelectorAll(".glass-btn");
 
-    buttons.forEach((btn,index)=>{
+    console.log("Buttons found:", buttons.length);
 
-        setTimeout(()=>{
+    buttons.forEach((btn, index) => {
+
+        setTimeout(() => {
 
             btn.classList.add("show");
 
-        },700+(index*90));
+            console.log("Show:", index);
+
+        }, 700 + (index * 90));
 
     });
 
