@@ -114,7 +114,10 @@ body{
 
 .logo-box img:hover{
 
-    transform:scale(1.05);
+    transform:scale(1.08);
+
+    filter:
+        drop-shadow(0 0 40px rgba(255,70,90,.65));
 
 }
 
@@ -421,5 +424,62 @@ font-size:12px;
     opacity:1;
 
     transform:translateY(0);
+
+}
+/* ===========================
+   LIVE EFFECTS
+=========================== */
+
+.background-glow{
+
+    animation:glowPulse 7s ease-in-out infinite;
+
+}
+
+.logo-box{
+
+    animation:
+        logoIntro .9s cubic-bezier(.2,.8,.2,1) forwards,
+        floating 4s ease-in-out infinite;
+
+    animation-delay:
+        0s,
+        1s;
+
+}
+
+@keyframes glowPulse{
+
+    0%,100%{
+
+        transform:translateX(-50%) scale(1);
+
+        opacity:.65;
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) scale(1.12);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes floating{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
 
 }
