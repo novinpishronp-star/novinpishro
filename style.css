@@ -165,6 +165,10 @@ body{
 
 .glass-btn{
 
+    position:relative;
+
+    overflow:hidden;
+
     display:flex;
 
     align-items:center;
@@ -173,35 +177,47 @@ body{
 
     text-decoration:none;
 
-    color:white;
+    color:#fff;
 
-    background:rgba(255,255,255,.08);
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.10),
+        rgba(255,255,255,.04)
+    );
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.12);
 
-    border-radius:18px;
+    border-radius:20px;
 
     padding:16px 18px;
 
-    transition:.3s;
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
 
     box-shadow:
-
-    0 10px 35px rgba(0,0,0,.28);
+        0 12px 35px rgba(0,0,0,.35);
 
 }
 
 .glass-btn:hover{
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-4px)
+        scale(1.015);
 
-    background:rgba(255,255,255,.12);
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,.07)
+    );
 
     box-shadow:
-
-    0 0 22px rgba(255,45,70,.30);
+        0 18px 40px rgba(0,0,0,.38),
+        0 0 24px rgba(255,50,80,.22);
 
 }
 
@@ -520,5 +536,52 @@ font-size:12px;
         opacity:0;
 
     }
+
+}
+/* ===========================
+   SHINE EFFECT
+=========================== */
+
+.glass-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.22),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:left .8s ease;
+
+}
+
+.glass-btn:hover::before{
+
+    left:160%;
+
+}
+
+.glass-btn:active{
+
+    transform:scale(.98);
 
 }
