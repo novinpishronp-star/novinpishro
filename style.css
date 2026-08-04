@@ -410,30 +410,16 @@ font-size:12px;
 
     transform:translateY(30px);
 
+    transition:
+        opacity .55s ease,
+        transform .55s ease;
+
 }
 
 .glass-btn.show{
 
-    animation:buttonIntro .55s ease forwards;
+    opacity:1;
 
-}
-
-@keyframes buttonIntro{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    transform:translateY(0);
 
 }
