@@ -108,6 +108,7 @@ body{
     drop-shadow(0 0 30px rgba(255,60,80,.35));
 
     transition:.35s;
+   will-change:transform;
 
 }
 
@@ -341,5 +342,61 @@ font-size:15px;
 font-size:12px;
 
 }
+
+}
+/* ===========================
+   INTRO ANIMATION
+=========================== */
+
+.logo-box{
+    opacity:0;
+    transform:scale(.82) translateY(-15px);
+    animation:logoIntro .9s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.hero h1{
+    opacity:0;
+    transform:translateY(20px);
+    animation:titleIntro .8s ease forwards;
+    animation-delay:.35s;
+}
+
+.hero p{
+    opacity:0;
+    transform:translateY(20px);
+    animation:titleIntro .8s ease forwards;
+    animation-delay:.55s;
+}
+
+@keyframes logoIntro{
+
+    0%{
+        opacity:0;
+        transform:scale(.82) translateY(-15px);
+    }
+
+    60%{
+        opacity:1;
+        transform:scale(1.04);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes titleIntro{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
 }
