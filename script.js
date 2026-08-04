@@ -17,3 +17,32 @@ window.addEventListener("load", () => {
     });
 
 });
+document.querySelectorAll(".glass-btn").forEach(button=>{
+
+    button.addEventListener("click",function(e){
+
+        const circle=document.createElement("span");
+
+        circle.classList.add("ripple");
+
+        const rect=this.getBoundingClientRect();
+
+        const size=Math.max(rect.width,rect.height);
+
+        circle.style.width=size+"px";
+        circle.style.height=size+"px";
+
+        circle.style.left=(e.clientX-rect.left-size/2)+"px";
+        circle.style.top=(e.clientY-rect.top-size/2)+"px";
+
+        this.appendChild(circle);
+
+        setTimeout(()=>{
+
+            circle.remove();
+
+        },600);
+
+    });
+
+});
