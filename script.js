@@ -17,6 +17,11 @@ window.addEventListener("load", () => {
     });
 
 });
+
+// ===========================
+// RIPPLE EFFECT
+// ===========================
+
 document.querySelectorAll(".glass-btn").forEach(button=>{
 
     button.addEventListener("click",function(e){
